@@ -61,18 +61,51 @@ public class Word {
     }
     
     public String toStringCoNNLU() {
-        return this.getIndex() + "\t" +
-                this.getForm() + "\t" +
-                "_" + "\t" +
-                (this.getPosTag() == null?"_": this.getPosTag()) +  "\t" +
-                "_" + "\t" +
-                "_" + "\t" +
-                (this.getHead() == -1?"_\t": this.getHead()) + "\t" +
-                (this.getDepLabel() == null?"_": this.getDepLabel()) +
-                "_" + "\t" +
-                "_" + "\t";
+        return this.getIndex() + "\t" +  // ID
+                this.getForm() + "\t" +  // FORM
+                "_" + "\t" +  // LEMMA
+                (this.getPosTag() == null ? "_" : convertToUPOS(this.getPosTag())) +  "\t" + // UPOS
+                (this.getPosTag() == null ? "_" : this.getPosTag()) +  "\t" +  // XPOS
+                "_" + "\t" +  // FEATS
+                (this.getHead() == -1 ? "_" : this.getHead()) + "\t" +  // HEAD
+                (this.getDepLabel() == null ? "_" : this.getDepLabel()) + "\t" +  // DEPREL
+                "_" + "\t" +  // DEPS
+                "_" + "\t";  // MISC
     }
-
+    
+    public String convertToUPOS(String tag) {
+    	String cTag = tag;
+    	switch(tag) {
+	    	case "Np": cTag = "PROPN"; break;
+	    	case "Nc": cTag = "_"; break;
+	    	case "Nu": cTag = "_"; break;
+	    	case "N": cTag = "NOUN"; break;
+	    	case "Ny": cTag = "_"; break;
+	    	case "Nb": cTag = "_"; break;
+	    	
+	    	case "V": cTag = "VERB"; break;
+	    	case "Vb": cTag = "_"; break;
+	    	
+	    	case "A": cTag = "ADJ"; break;
+	    	case "P": cTag = "PRON"; break;
+	    	case "R": cTag = "ADV"; break;
+	    	case "L": cTag = "DET"; break;
+	    	case "M": cTag = "NUM"; break;
+	    	case "E": cTag = "_"; break;
+	    	
+	    	case "C": cTag = "SCONJ"; break;
+	    	case "Cc": cTag = "CCONJ"; break;
+	    	case "I": cTag = "INTJ"; break;
+	    	case "T": cTag = "AUX"; break;
+	    	case "Y": cTag = "_"; break;
+	    	case "Z": cTag = "_"; break;
+	    	case "X": cTag = "X"; break;
+	    	
+	    	case "CH": cTag = "PUNCT"; break;
+    	}
+    	return cTag;
+    }
+    
     public String getForm() {
         return form;
     }
