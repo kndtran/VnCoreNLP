@@ -82,6 +82,18 @@ public class Sentence {
         }
         return sb.toString().trim();
     }
+    
+    public String toStringCoNNLU() {
+        StringBuffer sb = new StringBuffer();
+        for (Word word : words) {
+            sb.append(word.toStringCoNNLU() + "\n");
+        }
+        return sb.toString().trim();
+    }
+
+    public String getRawSentenceCoNNLU() {
+        return "# " + rawSentence;
+    }
 
     public String getRawSentence() {
         return rawSentence;

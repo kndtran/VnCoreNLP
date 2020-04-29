@@ -49,6 +49,17 @@ public class Annotation {
         else return rawText;
         return sb.toString();
     }
+    
+    public String toStringCoNNLU() {
+        StringBuffer sb = new StringBuffer();
+        if(sentences != null)
+            for(Sentence sentence : sentences) {
+            	sb.append(sentence.getRawSentenceCoNNLU() + "\n");
+                sb.append(sentence.toStringCoNNLU() + "\n---\n");
+            }
+        else return rawText;
+        return sb.toString();
+    }
 
     // Word count
     public HashMap<String, Integer> wordCount() {

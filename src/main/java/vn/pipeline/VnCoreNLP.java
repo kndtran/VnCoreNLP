@@ -104,7 +104,8 @@ public class VnCoreNLP {
             if (line.trim().length() > 0) {
                 Annotation annotation = new Annotation(line);
                 pipeline.annotate(annotation);
-                osw.write(annotation.toString());
+                //osw.write(annotation.toString());
+                osw.write(annotation.toStringCoNNLU());
             }
         }
         br.close();

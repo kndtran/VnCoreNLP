@@ -317,6 +317,8 @@ class Regex
     public static final String SHORT_NAME = "([\\p{L}]+([\\.\\-][\\p{L}]+)+)|([\\p{L}]+-\\d+)";
 
     public static final String WORD_WITH_HYPHEN = "\\p{L}+-\\p{L}+(-\\p{L}+)*";
+    
+    public static final String WORD_WITH_UNDERSCORE = "\\p{L}+_\\p{L}+(_\\p{L}+)*";
 
     public static final String ALLCAP = "[A-Z]+\\.[A-Z]+";
 
@@ -368,6 +370,9 @@ class Regex
 
             regexes.add(WORD_WITH_HYPHEN);
             regexIndex.add("WORD_WITH_HYPHEN");
+
+            regexes.add(WORD_WITH_UNDERSCORE);
+            regexIndex.add("WORD_WITH_UNDERSCORE");
 
             regexes.add(PUNCTUATION);
             regexIndex.add("PUNCTUATION");

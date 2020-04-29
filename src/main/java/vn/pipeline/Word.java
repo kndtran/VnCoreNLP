@@ -59,6 +59,19 @@ public class Word {
                 (this.getHead() == -1?"_\t": this.getHead()) + "\t" +
                 (this.getDepLabel() == null?"_": this.getDepLabel());
     }
+    
+    public String toStringCoNNLU() {
+        return this.getIndex() + "\t" +
+                this.getForm() + "\t" +
+                "_" + "\t" +
+                (this.getPosTag() == null?"_": this.getPosTag()) +  "\t" +
+                "_" + "\t" +
+                "_" + "\t" +
+                (this.getHead() == -1?"_\t": this.getHead()) + "\t" +
+                (this.getDepLabel() == null?"_": this.getDepLabel()) +
+                "_" + "\t" +
+                "_" + "\t";
+    }
 
     public String getForm() {
         return form;
