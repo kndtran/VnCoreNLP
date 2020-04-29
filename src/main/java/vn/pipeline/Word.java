@@ -77,28 +77,28 @@ public class Word {
     	String cTag = tag;
     	switch(tag) {
 	    	case "Np": cTag = "PROPN"; break;
-	    	case "Nc": cTag = "_"; break;
-	    	case "Nu": cTag = "_"; break;
+	    	case "Nc": cTag = "NOUN"; break;
+	    	case "Nu": cTag = "NOUN"; break;
 	    	case "N": cTag = "NOUN"; break;
-	    	case "Ny": cTag = "_"; break;
-	    	case "Nb": cTag = "_"; break;
+	    	case "Ny": cTag = "NOUN"; break;
+	    	case "Nb": cTag = "NOUN"; break;
 	    	
 	    	case "V": cTag = "VERB"; break;
-	    	case "Vb": cTag = "_"; break;
+	    	case "Vb": cTag = "VERB"; break;
 	    	
 	    	case "A": cTag = "ADJ"; break;
 	    	case "P": cTag = "PRON"; break;
 	    	case "R": cTag = "ADV"; break;
 	    	case "L": cTag = "DET"; break;
 	    	case "M": cTag = "NUM"; break;
-	    	case "E": cTag = "_"; break;
+	    	case "E": cTag = "ADP"; break;
 	    	
 	    	case "C": cTag = "SCONJ"; break;
 	    	case "Cc": cTag = "CCONJ"; break;
 	    	case "I": cTag = "INTJ"; break;
 	    	case "T": cTag = "AUX"; break;
-	    	case "Y": cTag = "_"; break;
-	    	case "Z": cTag = "_"; break;
+	    	case "Y": cTag = "SYM"; break;
+	    	case "Z": cTag = "X"; break;
 	    	case "X": cTag = "X"; break;
 	    	
 	    	case "CH": cTag = "PUNCT"; break;
