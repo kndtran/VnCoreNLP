@@ -96,7 +96,7 @@ public class Word {
 	    	case "C": cTag = "SCONJ"; break;
 	    	case "Cc": cTag = "CCONJ"; break;
 	    	case "I": cTag = "INTJ"; break;
-	    	case "T": cTag = "AUX"; break;
+	    	case "T": cTag = "PART"; break;
 	    	case "Y": cTag = "SYM"; break;
 	    	case "Z": cTag = "X"; break;
 	    	case "X": cTag = "X"; break;

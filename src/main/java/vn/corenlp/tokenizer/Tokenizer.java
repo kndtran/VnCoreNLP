@@ -311,7 +311,7 @@ class Regex
     public static final String SPECIAL_CHAR = "\\~|\\@|\\#|\\^|\\&|\\*|\\+|\\-|\\â€“|<|>|\\|";
 
     public static final String EOS_PUNCTUATION = "(\\.+|\\?|!|…)";
-
+    
     public static final String NUMBERS_EXPRESSION = NUMBER + "([\\+\\-\\*\\/]" + NUMBER + ")*";
 
     public static final String SHORT_NAME = "([\\p{L}]+([\\.\\-][\\p{L}]+)+)|([\\p{L}]+-\\d+)";

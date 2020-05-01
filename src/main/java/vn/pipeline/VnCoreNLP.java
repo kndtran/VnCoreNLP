@@ -9,6 +9,7 @@ import vn.corenlp.wordsegmenter.WordSegmenter;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 
@@ -66,7 +67,8 @@ public class VnCoreNLP {
     }
 
     public void annotate(Annotation annotation) throws IOException {
-        List<String> rawSentences = Tokenizer.joinSentences(Tokenizer.tokenize(annotation.getRawText()));
+    	//List<String> rawSentences = Tokenizer.joinSentences(Tokenizer.tokenize(annotation.getRawText()));
+    	List<String> rawSentences = Arrays.asList(annotation.getRawText().split("\n"));
         annotation.setSentences(new ArrayList<>());
         for (String rawSentence : rawSentences) {
             if (rawSentence.trim().length() > 0) {
